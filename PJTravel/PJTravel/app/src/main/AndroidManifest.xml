@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="me.pj.travel">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
+    <uses-feature
+        android:name="android.hardware.camera.any"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".LokasiDriverUserActivity"
+            android:label="Lokasi Driver"
+            android:parentActivityName=".LokasiUserActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.pj.travel.MainActivity" />
+        </activity>
+        <activity
+            android:name=".MapDriverActivity"
+            android:label="@string/title_activity_map_driver"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.pj.travel.MainActivity" />
+        </activity>
+        <activity
+            android:name=".LokasiPelangganDriverActivity"
+            android:label="@string/title_activity_jadwal_driver"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.pj.travel.MainActivity" />
+        </activity>
+        <activity
+            android:name=".LaporanAdminActivity"
+            android:label="@string/title_activity_laporan_admin"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.pj.travel.MainActivity" />
+        </activity>
+        <activity
+            android:name=".DetailPesananAdminActivity"
+            android:label="@string/title_activity_detail_pesanan_admin"
+            android:parentActivityName=".PesananAdminActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.pj.travel.PesananAdminActivity" />
+        </activity>
+        <activity
+            android:name=".PesananAdminActivity"
+            android:label="@string/title_activity_pesanan_admin"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.pj.travel.MainActivity" />
+        </activity>
+        <activity
+            android:name=".BantuanActivity"
+            android:label="@string/title_activity_bantuan"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.pj.travel.MainActivity" />
+        </activity>
+        <activity
+            android:name=".LokasiUserActivity"
+            android:label="@string/title_activity_lokasi_user"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.pj.travel.MainActivity" />
+        </activity>
+        <activity
+            android:name=".JadwalUserActivity"
+            android:label="@string/title_activity_jadwal_user"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.pj.travel.MainActivity" />
+        </activity>
+        <activity
+            android:name=".PesananUserActivity"
+            android:label="@string/title_activity_pesanan_user"
+            android:parentActivityName=".MenuPesanUserActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.pj.travel.MenuPesanUserActivity" />
+        </activity>
+        <activity
+            android:name=".BuatPesananUserActivity"
+            android:label="@string/title_activity_buat_pesanan_user"
+            android:parentActivityName=".MenuPesanUserActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.pj.travel.MenuPesanUserActivity" />
+        </activity>
+        <activity
+            android:name=".MenuPesanUserActivity"
+            android:label="@string/title_activity_menu_pesan_user"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.pj.travel.MainActivity" />
+        </activity>
+        <activity
+            android:name=".InputJadwalAdminActivity"
+            android:label="@string/title_activity_input_jadwal_admin"
+            android:parentActivityName=".JadwalAdminActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.pj.travel.JadwalAdminActivity" />
+        </activity>
+        <activity
+            android:name=".JadwalAdminActivity"
+            android:label="@string/title_activity_jadwal_admin"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.pj.travel.MainActivity" />
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" />
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

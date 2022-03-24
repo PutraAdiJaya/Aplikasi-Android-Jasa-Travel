@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".PesananUserActivity"
+    tools:showIn="@layout/activity_pesanan_user">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="DATA PESANAN"
+                android:textAlignment="center"
+                android:textSize="10pt"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/view"
+                style="@style/Divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/ed_Nama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="NAMA"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:textColor="@color/textview_colors" />
+
+            <EditText
+                android:id="@+id/ed_alamat_tujuan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="TUJUAN"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:textColor="@color/textview_colors" />
+
+            <EditText
+                android:id="@+id/ed_tanggal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="TANGGAL"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:textColor="@color/textview_colors" />
+
+            <EditText
+                android:id="@+id/ed_kloter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="KLOTER"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="@color/textview_colors" />
+
+            <EditText
+                android:id="@+id/ed_Driver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="KLOTER"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="@color/textview_colors" />
+
+            <WebView
+                android:id="@+id/webView"
+                android:layout_width="match_parent"
+                android:layout_height="215dp">
+
+            </WebView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="DATA  PEMBAYARAN"
+                android:textAlignment="center"
+                android:textSize="10pt"
+                android:textStyle="bold" />
+
+            <View
+                style="@style/Divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/ed_Tarif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="TARIF"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="@color/textview_colors" />
+
+            <EditText
+                android:id="@+id/ed_Pembayaran"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="STATUS PEMBAYARAN"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="@color/textview_colors" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

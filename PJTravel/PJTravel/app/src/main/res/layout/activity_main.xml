@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#F7F5F8"
+    android:gravity="center|top"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="50px">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12px"
+            android:text="PHODO  JOYO TRAVEL"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="14pt"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LayCostumer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="20px"
+                android:layout_weight="1"
+                android:background="@drawable/borders"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <Button
+                    android:id="@+id/btnJadwal"
+                    android:layout_width="180px"
+                    android:layout_height="180px"
+                    android:background="@drawable/jadwal"
+                    android:onClick="show_Jadwal_User"
+                    android:padding="45px" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="JADWAL"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <View style="@style/Divider" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lihatlah jadwal sebelum memesan"
+                    android:textAlignment="center"
+                    android:textSize="6pt" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="20px"
+                android:layout_weight="1"
+                android:background="@drawable/borders"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <Button
+                    android:id="@+id/btnPesan"
+                    android:layout_width="180px"
+                    android:layout_height="180px"
+                    android:background="@drawable/pesan"
+                    android:onClick="show_Pesan_User"
+                    android:padding="45px" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="PESAN"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <View style="@style/Divider" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Buatlah pesanan anda dengan benar"
+                    android:textAlignment="center"
+                    android:textSize="6pt" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="20px"
+                android:layout_weight="1"
+                android:background="@drawable/borders"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <Button
+                    android:id="@+id/btnLokasi"
+                    android:layout_width="180px"
+                    android:layout_height="180px"
+                    android:background="@drawable/lokasi"
+                    android:onClick="show_Lokasi_User"
+                    android:padding="45px" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="LOKASI"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <View style="@style/Divider" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lihat Lokasi driver anda"
+                    android:textAlignment="center"
+                    android:textSize="6pt" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="15px"
+                android:layout_weight="1"
+                android:background="@drawable/borders"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <Button
+                    android:id="@+id/btnBantuan"
+                    android:layout_width="180px"
+                    android:layout_height="180px"
+                    android:background="@drawable/bantuan"
+                    android:onClick="show_Bantuan"
+                    android:padding="45px" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="BANTUAN"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <View style="@style/Divider" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Gunakan bantuan jika tidak paham"
+                    android:textAlignment="center"
+                    android:textSize="6pt" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LayAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="20px"
+                android:layout_weight="1"
+                android:background="@drawable/borders"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <Button
+                    android:id="@+id/btnJadwalAdmin"
+                    android:layout_width="180px"
+                    android:layout_height="180px"
+                    android:background="@drawable/jadwal"
+                    android:onClick="show_Jadwal_Admin"
+                    android:padding="45px" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="JADWAL"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <View style="@style/Divider" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="6pt" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="20px"
+                android:layout_weight="1"
+                android:background="@drawable/borders"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <Button
+                    android:id="@+id/btnPesanAdmin"
+                    android:layout_width="180px"
+                    android:layout_height="180px"
+                    android:background="@drawable/pesan"
+                    android:onClick="show_Pesan_Admin"
+                    android:padding="45px" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="PESAN"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <View style="@style/Divider" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="6pt" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="15px"
+                android:layout_weight="1"
+                android:background="@drawable/borders"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <Button
+                    android:id="@+id/btnLaporan"
+                    android:layout_width="180px"
+                    android:layout_height="180px"
+                    android:background="@drawable/laporan"
+                    android:onClick="show_Laporan_Admin"
+                    android:padding="45px" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="LAPORAN"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <View style="@style/Divider" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="6pt" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/LayDriver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="20px"
+                android:layout_weight="1"
+                android:background="@drawable/borders"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <Button
+                    android:id="@+id/btnPesanan"
+                    android:layout_width="180px"
+                    android:layout_height="180px"
+                    android:background="@drawable/pesanan"
+                    android:onClick="show_Pesan_Driver"
+                    android:padding="45px" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="PESANAN"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <View style="@style/Divider" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="6pt" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="20px"
+                android:layout_weight="1"
+                android:background="@drawable/borders"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <Button
+                    android:id="@+id/btnLokasiDriver"
+                    android:layout_width="180px"
+                    android:layout_height="180px"
+                    android:background="@drawable/lokasi"
+                    android:onClick="show_Lokasi_Driver"
+                    android:padding="45px" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="LOKASI"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <View style="@style/Divider" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="6pt" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

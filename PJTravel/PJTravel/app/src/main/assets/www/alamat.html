@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        Lokasi GPS Anda Sekarang
+    </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style >
+
+			html,
+			body
+			{
+				height: 100% ;
+				margin: 0px 0px 0px 0px ;
+				overflow: hidden ;
+				padding: 0px 0px 0px 0px ;
+				width: 100% ;
+			}
+			#google_canvas
+			{
+				height: 100%;
+				width:100%;
+			}
+			#google_canvas h1
+			{
+				font-size: 16px;
+			}
+			#google_canvas h2
+			{
+				font-size: 14px;
+				font-weight: 300;
+			}
+			#GPS
+			{
+				visibility:hidden;
+				display:none;
+			}
+		</style>
+</head>
+<body>
+
+<form id="GPS" name="GPS"><input name="Lokasi" name="Lokasi" type="text" id="Lokasi"></form>
+<div id="google_canvas">
+</div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBZT-ft3YByA5JpCGWDUiEn2U_V7F14R5I"></script>
+
+<script>
+
+
+		var mapContainer = $( "#google_canvas" );
+
+		var InforObj = [];
+        var markersOnMap = [{
+                placeName: "Australia (Uluru)",
+                LatLng: [{
+                    lat: -25.344,
+                    lng: 131.036
+                }]
+            },
+            {
+                placeName: "Australia (Melbourne)",
+                LatLng: [{
+                    lat: -37.852086,
+                    lng: 504.985963
+                }]
+            },
+            {
+                placeName: "Australia (Canberra)",
+                LatLng: [{
+                    lat: -35.299085,
+                    lng: 509.109615
+                }]
+            },
+            {
+                placeName: "Australia (Gold Coast)",
+                LatLng: [{
+                    lat: -28.013044,
+                    lng: 513.425586
+                }]
+            },
+            {
+                placeName: "Australia (Perth)",
+                LatLng: [{
+                    lat: -31.951994,
+                    lng: 475.858081
+                }]
+            }
+        ];
+
+        function addMarkerInfo() {
+            for (var i = 0; i < markersOnMap.length; i++) {
+                var contentString = '<div id="content"><h1>' + markersOnMap[i].placeName +
+                    '</h1><p>Lorem ipsum dolor sit amet, vix mutat posse suscipit id, vel ea tantas omittam detraxit.</p></div>';
+
+                const marker = new google.maps.Marker({
+                    position: markersOnMap[i].LatLng[0],
+                    map: map
+                });
+
+                const infowindow = new google.maps.InfoWindow({
+                    content: contentString,
+                    maxWidth: 200
+                });
+
+                marker.addListener('click', function () {
+                    closeOtherInfo();
+                    infowindow.open(marker.get('map'), marker);
+                    InforObj[0] = infowindow;
+                });
+                // marker.addListener('mouseover', function () {
+                //     closeOtherInfo();
+                //     infowindow.open(marker.get('map'), marker);
+                //     InforObj[0] = infowindow;
+                // });
+                // marker.addListener('mouseout', function () {
+                //     closeOtherInfo();
+                //     infowindow.close();
+                //     InforObj[0] = infowindow;
+                // });
+            }
+        }
+
+        function closeOtherInfo() {
+            if (InforObj.length > 0) {
+                InforObj[0].set("marker", null);
+                InforObj[0].close();
+                InforObj.length = 0;
+            }
+        }
+		map = new google.maps.Map(
+			mapContainer[ 0 ],
+			{
+				zoom: 16,
+				center: new google.maps.LatLng(
+					-7.8, 112.7
+				),
+			}
+		);
+		var	 infowindow = null;
+
+		function addMarker( latitude, longitude, label ){
+			var marker = new google.maps.Marker({
+				map: map,
+				position: new google.maps.LatLng(
+					latitude,
+					longitude
+				),
+				title: (label || "")
+			});
+
+/*
+
+			map.setCenter(new google.maps.LatLng(
+					latitude,
+					longitude
+				));
+*/
+
+			infowindow =  new google.maps.InfoWindow(
+			{
+				map: map,
+				position:  new google.maps.LatLng(
+					latitude,
+					longitude
+				),
+				content:
+				'<h1>Lokasi Anda : </h1>' +
+				'<h2>Latitude: ' +  latitude + '</h2>' +
+				'<h2>Longitude: ' + longitude + '</h2>'
+			});
+			google.maps.event.addListener(marker, 'click', function()
+			{
+				infowindow.open(map,marker);
+
+			});
+ 			infowindow.open(map,marker);
+			return( marker );
+		}
+
+		function updateMarker( marker, latitude, longitude, label ){
+		    let myLatlng = new google.maps.LatLng(latitude,longitude);
+			marker.setPosition( myLatlng);
+
+			if (label){
+				marker.setTitle( label );
+			}
+
+			map.setCenter(myLatlng);
+		}
+
+        addMarkerInfo();
+		if (navigator.geolocation) {
+
+			var locationMarker = null;
+
+			navigator.geolocation.getCurrentPosition(
+				function( position ){
+
+					if (locationMarker){
+						return;
+					}
+
+					console.log( "<NEW>" +"Initial Position Found" );
+
+					locationMarker = addMarker(
+						position.coords.latitude,
+						position.coords.longitude,
+						"Initial Position"
+					);
+
+				},
+				function( error ){
+					console.log(  "<ERR>" + "Something went wrong: ", error );
+				},
+				{
+					timeout: (5 * 1000),
+					maximumAge: (1000 * 60 * 15),
+					enableHighAccuracy: true
+				}
+			);
+
+			var positionTimer = navigator.geolocation.watchPosition(
+				function( position ){
+ 					//document.GPS.Lokasi.value=  position.coords.latitude + ',' + position.coords.longitude;
+					console.log( "<GPS>" + position.coords.latitude + ',' + position.coords.longitude );
+					updateMarker(
+						locationMarker,
+						position.coords.latitude,
+						position.coords.longitude,
+						"Lokasi Anda."
+					);
+				}
+			);
+
+
+			setTimeout(
+				function(){
+					navigator.geolocation.clearWatch( positionTimer );
+				},
+				(1000 * 60 * 5)
+			);
+
+		}
+		</script>
+</body>
+
+</html>

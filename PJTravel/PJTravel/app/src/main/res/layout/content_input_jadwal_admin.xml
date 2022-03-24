@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".InputJadwalAdminActivity"
+    tools:showIn="@layout/activity_input_jadwal_admin">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="DATA ARMADA"
+                android:textAlignment="center"
+                android:textSize="10pt"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/view"
+                style="@style/Divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/ed_Jenis_Armada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Jenis Armada"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/ed_Merk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Merk Kendaraan"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/ed_No_Polisi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Nomor Polisi"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/ed_Kapasitas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Kapasitas Penumpang"
+                android:inputType="number" />
+            <ImageView
+                android:id="@+id/foto"
+                android:layout_width="match_parent"
+                android:layout_height="215dp"
+                android:background="@android:drawable/editbox_background"
+                android:src="@android:drawable/ic_menu_close_clear_cancel" />
+
+            <ImageButton
+                android:id="@+id/btnFoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="takePhoto"
+                app:srcCompat="@android:drawable/ic_menu_camera" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="DATA JADWAL"
+                android:textAlignment="center"
+                android:textSize="10pt"
+                android:textStyle="bold" />
+
+            <View
+                style="@style/Divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kota Tujuan" />
+
+            <Spinner
+                android:id="@+id/sp_Kota"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:dropDownWidth="match_parent"
+                android:spinnerMode="dialog" />
+
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:id="@+id/textView6"
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jam Keberangkatan" />
+
+            <Spinner
+                android:id="@+id/sp_Jam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:dropDownWidth="match_parent"
+                android:spinnerMode="dialog" />
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:padding="5dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama Driver" />
+
+            <Spinner
+                android:id="@+id/sp_Driver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dialog" />
+
+            <EditText
+                android:id="@+id/ed_Tarif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Tarif (Rp)"
+                android:inputType="number" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

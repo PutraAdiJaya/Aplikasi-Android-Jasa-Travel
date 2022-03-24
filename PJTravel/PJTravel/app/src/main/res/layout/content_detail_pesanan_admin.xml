@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".DetailPesananAdminActivity"
+    tools:showIn="@layout/activity_detail_pesanan_admin">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="ISI DATA PENUMPANG"
+                android:textAlignment="center"
+                android:textSize="10pt"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/view"
+                style="@style/Divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Nama Sesuai KTP"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/edKtp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Nomor KTP"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/edHP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Nomor HP / Telp"
+                android:inputType="phone" />
+
+            <EditText
+                android:id="@+id/edAlamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Alamat Penjemputan"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/edTujuan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Alamat Tujuan"
+                android:inputType="text" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="STATUS PESANAN"
+                android:textAlignment="center"
+                android:textSize="10pt"
+                android:textStyle="bold" />
+
+            <View
+                style="@style/Divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <Spinner
+                android:id="@+id/sp_status_pesanan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dialog" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="STATUS PEMBAYARAN"
+                android:textAlignment="center"
+                android:textSize="10pt"
+                android:textStyle="bold" />
+
+            <View
+                style="@style/Divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <Spinner
+                android:id="@+id/sp_status_pembayaran"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dialog" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="JADWAL dan TUJUAN"
+                android:textAlignment="center"
+                android:textSize="10pt"
+                android:textStyle="bold" />
+
+            <View
+                style="@style/Divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <EditText
+                    android:id="@+id/edTanggal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Tanggal Keberangkatan"
+                    android:inputType="date" />
+
+                <ImageButton
+                    android:id="@+id/ibTanggal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:onClick="showDateDialog"
+                    app:srcCompat="@android:drawable/ic_menu_my_calendar" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:padding="5dp"
+                android:text="Kota Tujuan dan Waktu Pemberangkatan" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scrollbars="vertical" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
